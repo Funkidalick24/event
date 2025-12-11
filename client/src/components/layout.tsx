@@ -121,7 +121,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-semibold mb-4 text-sm">Platform</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link href="/events"><a className="hover:text-primary transition-colors">Browse Events</a></Link></li>
-              <li><Link href="/profile"><a className="hover:text-primary transition-colors">Organizers</a></Link></li>
+              <li><Link href="/user-profile"><a className="hover:text-primary transition-colors">Organizers</a></Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
             </ul>
           </div>
