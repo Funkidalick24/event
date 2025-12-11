@@ -1,0 +1,69 @@
+Pages & Features
+1. Home Page (/)
+Purpose: Event discovery and listing
+Features:
+Displays all available events in a clean list format
+Shows event title, date, and description
+"Register" button for each event (links to registration form with event pre-selected)
+Real-time data loading from database
+Responsive design
+2. Registration Form (/register)
+Purpose: User registration for events
+Features:
+Interactive form with live validation
+Required fields: Full Name, Email
+Event selection via URL parameter (from home page)
+Client-side validation (HTML5 + React state)
+Form submission saves to database
+Automatic redirect to confirmation page after successful registration
+3. Registration Confirmation (/registrations/[id])
+Purpose: Display registration details
+Features:
+Dynamic routing based on registration ID
+Shows user's registration information
+Displays associated event details
+Confirmation of successful registration
+Unique registration ID for reference
+🗄️ Database Schema
+-- Events Table
+CREATE TABLE Event (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR NOT NULL,
+  date VARCHAR NOT NULL,
+  description TEXT NOT NULL
+);
+
+-- Registrations Table
+CREATE TABLE Registration (
+  id SERIAL PRIMARY KEY,
+  eventId INTEGER REFERENCES Event(id),
+  fullName VARCHAR NOT NULL,
+  email VARCHAR NOT NULL
+);
+🔄 API Endpoints
+GET /api/events
+Returns all events from database
+Used by home page to display event list
+POST /api/register
+Accepts: { eventId, fullName, email }
+Creates new registration record
+Returns registration object with ID
+Used by registration form
+🎨 User Experience Flow
+Discovery: User visits home page, sees available events
+Selection: Clicks "Register" on desired event
+Registration: Fills out form with personal details
+Confirmation: Sees registration details with unique ID
+Persistence: All data saved to cloud database
+✨ Key Features
+Interactive Forms: Real-time validation and feedback
+Dynamic Routing: Registration details via URL parameters
+Database Integration: Full CRUD operations
+Responsive Design: Works on desktop and mobile
+Error Handling: Proper validation and user feedback
+Modern UI: Clean, professional interface
+🚀 Deployment Ready
+Environment variables configured (.env)
+Database connection established
+Production builds supported
+Static generation for performance
