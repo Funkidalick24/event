@@ -8,7 +8,7 @@ To start a test server on your computer, run `npm run dev` in the project root d
 
 The purpose of writing this software was to deepen my understanding of full-stack web development, particularly focusing on modern React patterns, TypeScript, and backend API design. By building EventHorizon, I aimed to create a practical application that demonstrates real-world development skills while solving a common problem in event management.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/XarHLncFe4U)
 
 ## Web Pages
 
